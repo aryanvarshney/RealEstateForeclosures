@@ -36,7 +36,7 @@ For the automated email service, simply run ```python script.py```
 
 ### API endpoints
 
-**Fetching currently serviced banks**
+#### **Fetching currently serviced banks**
 
 Request Format: /bank/
 
@@ -50,7 +50,7 @@ Example/Current output:
 ```Currently only servicing Bank of America(boa)```
 
 
-**Scraping specific bank foreclosure listings**
+#### #**Scraping specific bank foreclosure listings**
 
 Request Format: /bank/<bank_symbol>
 
@@ -68,7 +68,7 @@ Example Output:
 ```
 
 
-**Get all foreclosure listings in the database**
+#### **Get all foreclosure listings in the database**
 
 Request Format: /properties
 
@@ -105,7 +105,7 @@ Example Output:
 ```
 
 
-**Get all currently serviced states**
+#### **Get all currently serviced states**
 
 Request Format: /properties/state/
 
@@ -121,7 +121,7 @@ Example/Current Output:
 ```
 
 
-**Get all property listings in a state**
+#### **Get all property listings in a state**
 
 Request Format: /properties/state/<state_name>
 
