@@ -49,6 +49,7 @@ Example/Current output:
 
 ```Currently only servicing Bank of America(boa)```
 
+
 **Scraping specific bank foreclosure listings**
 
 Request Format: /bank/<bank_symbol>
@@ -65,6 +66,7 @@ Example Output:
 [{"sourcelink":"foreclosures.bankofamerica.com/property-details/01106542", "location": "CA-Sacramento-95828", "state": "california", "datetime": "2020-07-26 10:00:57.209186"},
 {"sourcelink": "foreclosures.bankofamerica.com/property-details/01106473","location": "CA-Lodi-95242","state": "california","datetime": "2020-07-26 10:00:57.209223"}]
 ```
+
 
 **Get all foreclosure listings in the database**
 
@@ -102,6 +104,7 @@ Example Output:
 {"sourcelink": "foreclosures.bankofamerica.com/property-details/01106259", "location": "OH-Glouster-45732", "state": "ohio"}]
 ```
 
+
 **Get all currently serviced states**
 
 Request Format: /properties/state/
@@ -116,6 +119,7 @@ Example/Current Output:
 ```
 ["alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland", "massachusetts", "michigan", "minnesota", "mississippi", "missouri", "montana", "nebraska", "nevada", "newhampshire", "newjersey", "newmexico", "newyork", "northcarolina", "northdakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhodeisland", "southcarolina", "southdakota", "tennessee", "texas", "utah", "vermont", "vriginia", "washington", "westvirginia", "wisconsin", "wyoming"]
 ```
+
 
 **Get all property listings in a state**
 
