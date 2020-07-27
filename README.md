@@ -27,7 +27,7 @@ Important Python packages to install/import:
 2. BeautifulSoup for webscraping
 3. Smtplib for email services
 
-To start the web server and use the APIs, run the webapp.py file using ```python webapp.py```
+To start the web server and use the APIs, run the webapp.py file using ```python api/webapp.py```
 
 ## Usage
 
