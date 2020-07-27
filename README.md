@@ -10,13 +10,13 @@ There are two main functions for this project:
 
 ## Project Structure
 ```
-+-- script.py
++-- service
+|   +-- script.py
 +-- api
 |   +-- webapp.py
 +-- _data
 |   +-- properties.csv
-+-- logs
-|   +-- RElog.txt
++-- RElog.txt
 +-- test
 ```
 
@@ -32,7 +32,7 @@ To start the web server and use the APIs, run the webapp.py file using ```python
 ## Usage
 
 ### Email Service
-For the automated email service, simply run ```python script.py```
+For the automated email service, simply run ```python service/script.py```
 
 ### API endpoints
 
