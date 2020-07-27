@@ -46,7 +46,7 @@ Example/Current output:
 
 
 **Scraping specific bank foreclosure listings**  
-Request Format: /bank/<bank_symbol>  
+Request Format: /bank/<bank_symbol>/properties  
 Request Type: POST  
 Returned Data Format: JSON  
 Description: This endpoint scrapes the given banks foreclosure listings and adds all the new listings since the previous call. The new listings that were updated into the database are also returned in JSON format  

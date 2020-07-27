@@ -72,8 +72,8 @@ def properties():
             request_invalid(400, "Please use a valid integer for the number of days listed")
     
     if (daysListed != None):
-        output_list = [d for d in curr_links if (datetime.now() - datetime.strptime(d['datetime'], '%Y-%m-%d %H:%M:%S.%f')).days <= (daysListed-1)]
-    output_list = [{k: v for k, v in d.items() if k != 'datetime'} for d in output_list]
+        curr_links = [d for d in curr_links if (datetime.now() - datetime.strptime(d['datetime'], '%Y-%m-%d %H:%M:%S.%f')).days <= (daysListed-1)]
+    output_list = [{k: v for k, v in d.items() if k != 'datetime'} for d in curr_links]
     return json.dumps(output_list)
 
 # Gets all of the valid states
