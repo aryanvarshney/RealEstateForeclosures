@@ -37,33 +37,50 @@ For the automated email service, simply run ```python script.py```
 ### API endpoints
 
 **Fetching currently serviced banks**
+
 Request Format: /bank/
+
 Request Type: GET
+
 Returned Data Format: plain/text
+
 Description: This endpoint returns the names of the banks and their symbol where data can currently be scraped from. 
 Example/Current output:
+
 ```Currently only servicing Bank of America(boa)```
 
 **Scraping specific bank foreclosure listings**
+
 Request Format: /bank/<bank_symbol>
+
 Request Type: POST
+
 Returned Data Format: JSON
+
 Description: This endpoint scrapes the given banks foreclosure listings and adds all the new listings since the previous call. The new listings that were updated into the database are also returned in JSON format
+
 Example Output:
+
 ```
 [{"sourcelink":"foreclosures.bankofamerica.com/property-details/01106542", "location": "CA-Sacramento-95828", "state": "california", "datetime": "2020-07-26 10:00:57.209186"},
 {"sourcelink": "foreclosures.bankofamerica.com/property-details/01106473","location": "CA-Lodi-95242","state": "california","datetime": "2020-07-26 10:00:57.209223"}]
 ```
 
 **Get all foreclosure listings in the database**
+
 Request Format: /properties
+
 Request Type: GET
+
 Returned Data Format: JSON
+
 Description: Returns all of the property listings in the database along with their date added, state, and Zip Code
+
 Request Parameters:
  - daysListed (optional): Specifies the maximum number of days listed on the market
 
 Example Request: /properties?daysListed=2
+
 Example Output:
 ```
 [{"sourcelink": "foreclosures.bankofamerica.com/property-details/01106496", "location": "AZ-Buckeye-85326", "state": "arizona"},
@@ -84,26 +101,38 @@ Example Output:
 {"sourcelink": "foreclosures.bankofamerica.com/property-details/01102044", "location": "NV-Las Vegas-89129", "state": "nevada"},
 {"sourcelink": "foreclosures.bankofamerica.com/property-details/01106259", "location": "OH-Glouster-45732", "state": "ohio"}]
 ```
+
 **Get all currently serviced states**
+
 Request Format: /properties/state/
+
 Request type: GET
+
 Returned Data Format: List (JSON)
+
 Description: Returns the currently serviced states as their request name format (Reference following endpoint)
+
 Example/Current Output:
 ```
 ["alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland", "massachusetts", "michigan", "minnesota", "mississippi", "missouri", "montana", "nebraska", "nevada", "newhampshire", "newjersey", "newmexico", "newyork", "northcarolina", "northdakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhodeisland", "southcarolina", "southdakota", "tennessee", "texas", "utah", "vermont", "vriginia", "washington", "westvirginia", "wisconsin", "wyoming"]
 ```
 
 **Get all property listings in a state**
+
 Request Format: /properties/state/<state_name>
+
 Request type: GET
+
 Returned Data Format: JSON
+
 Description: Returns all property listings from the specified state. Invalid requests are met with a 400 "Please enter a valid state name" response
+
 Request Parameters:
 
  - daysListed (optional): Specifies the maximum number of days listed on the market
 
 Example Request: /properties/state/arizona
+
 Example Output:
 ```
 [{"sourcelink": "foreclosures.bankofamerica.com/property-details/01106496", "location": "AZ-Buckeye-85326", "state": "arizona", "datetime": "2020-07-26 10:00:56.275607"}]
