@@ -12,7 +12,7 @@ There are two main functions for this project:
 ```
 +-- script.py
 +-- api
-|   webapp.py
+|   +-- webapp.py
 +-- _data
 |   +-- properties.csv
 +-- logs
