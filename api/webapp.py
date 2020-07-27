@@ -27,14 +27,14 @@ db_path = os.path.abspath(os.path.dirname(__file__)) + "/../data/properties.csv"
 
 # Introduction to Real Estate foreclosure leads
 
-# Gets all of the banks that leads are being pulled from Get / -> getAll, Get /{id}, Post / -> add a bank, Put /{id}, Del /{id} 
-# Get /search?name=x
+# Gets all of the banks that leads are being pulled from
 @app.route('/rsforeclosure/bank/', methods=['GET'])
 def bank():
     return "Currently only servicing Bank of America (boa)"
 
 
-# Posts all the new listings from Bank of America Post /bank/{name}/listings
+# Posts all the new listings from Bank of America Post
+# Uses Beautiful Soup to scrape the Bank of America foreclosures site
 @app.route('/bank/<bank_name>/properties', methods=['POST'])
 def add_new_listings(bank_name):
     if (bank_name != 'boa'):
@@ -61,6 +61,7 @@ def add_new_listings(bank_name):
     return json.dumps(output_list)
 
 # Gets all of the properties in the db
+# Optional parameter daysListed to specify maximum days on market
 @app.route('/properties', methods=['GET'])
 def properties():
     curr_links = get_db()
@@ -82,6 +83,7 @@ def get_usstates():
     return json.dumps(states)
 
 # Gets all of the properties in the given state
+# Optional parameter daysListed to specify maximum days on market
 @app.route('/properties/state/<state_name>', methods=['GET'])
 def get_states(state_name):
     if(state_name not in states):
